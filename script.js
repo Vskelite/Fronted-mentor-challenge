@@ -2,7 +2,12 @@ const countries = document.querySelector(".countries");
 const select = document.querySelector(".select");
 const optionDiv = document.querySelector(".regionName");
 const regionArea = document.querySelectorAll(".region-text");
-
+const dark = document.querySelector(".dark-mode");
+const moon = document.querySelector(".moon");
+dark.addEventListener("click", ()=> {
+    document.body.classList.toggle("dark");
+    moon.classList.toggle("fa-moon")
+})
 
 select.addEventListener("click", ()=> {
     optionDiv.classList.toggle("show");

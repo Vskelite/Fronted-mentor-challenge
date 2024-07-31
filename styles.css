@@ -1,13 +1,8 @@
 @import url(https://fonts.google.com/specimen/Nunito+Sans);
 
-:root {
-    --bg-dark: hsl(207, 26%, 17%);
-    --dark-mode-elem: hsl(209, 23%, 22%);
-    --light-mode-text: hsl(200, 15%, 8%);
-    --light-mode-input: hsl(0, 0%, 52%);
-    --bg-light: hsl(0, 0%, 98%);
-    --light-mode-elem: hsl(0, 0%, 100%);
-}
+/* :root {
+    
+} */
 
 * {
     padding: 0;
@@ -20,6 +15,20 @@ body,
 html {
     width: 100%;
     height: 100%;
+    --bg-dark: hsl(207, 26%, 17%);
+    --dark-mode-elem: hsl(209, 23%, 22%);
+    --light-mode-text: hsl(200, 15%, 8%);
+    --light-mode-input: hsl(0, 0%, 52%);
+    --bg-light: hsl(0, 0%, 98%);
+    --light-mode-elem: hsl(0, 0%, 100%);
+}
+.dark{
+    --bg-dark: hsl(207, 26%, 17%);
+    --dark-mode-elem: hsl(209, 23%, 22%);
+    --light-mode-text: hsl(0, 0%, 100%);
+    --light-mode-input: hsl(0, 0%, 52%);
+    --bg-light: hsl(207, 26%, 17%);
+    --light-mode-elem: hsl(209, 23%, 22%);
 }
 
 .container {
@@ -28,6 +37,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: var(--bg-light);
 }
 
 .top {
@@ -73,6 +83,8 @@ input {
     width: 100%;
     height: 100%;
     outline: none;
+    background-color:var(--light-mode-elem);
+    color: var(--light-mode-input);
 }
 
 .search {
@@ -141,16 +153,14 @@ input {
 .countries{
     width: 100%;
     display:grid;
-    /* grid-template-columns: repeat(1, 1fr); */
     grid-template-columns:repeat(auto-fit, minmax( 18rem, 20rem));
     gap: 1rem;
     margin-top: 2.5rem;
-    margin-bottom: 2rem;
-    ;
+    margin-bottom: 1rem;
+    background-color: var(--bg-light);
 }
 
 .country{
-    /* width: 18rem; */
     margin: 1rem;
     min-height: 20rem;
     display: flex;
@@ -160,16 +170,20 @@ input {
     border-radius: 0.5rem;
     box-shadow: 2px 2px 2px rgb(207, 206, 206);
     cursor: pointer;
+    overflow: hidden;
 }
 
 .img-container{
     width: 100%;
     height: 45%;
+    overflow: hidden;
 }
 .img-container img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    overflow: hidden;
+    border-radius: 0.5rem;
 }
 .country-info{
     margin: 0.5rem;
@@ -208,16 +222,9 @@ h4{
     .regionName{
         margin-top: 3rem;
     }
-    /* .countries{
-        grid-template-columns: repeat(2, 1fr);
-    } */
 }
 
 @media screen and (min-width: 1080px){
-    /* .countries{
-        
-        gap: 1rem;
-    } */
     .search{
         width: 23rem;
     }
