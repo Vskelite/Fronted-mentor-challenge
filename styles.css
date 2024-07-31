@@ -119,8 +119,11 @@ input {
     border-radius: 0.5rem;
     box-shadow: 2px 2px 2px rgb(207, 206, 206);
     cursor: pointer;
-    display: block;
+    display: none;
     position: absolute;
+}
+.show{
+    display: block;
 }
 .region-text{
     text-align: start;
@@ -129,6 +132,10 @@ input {
     font-weight: 500;
     padding: 0.25rem;
     cursor: pointer;
+}
+
+.region-text:hover{
+    background-color: rgb(126, 142, 197);
 }
 
 .countries{

@@ -1,7 +1,12 @@
-
-// const search = document.querySelector("input");
-// search.addEventListener("input", findCountries);
 const countries = document.querySelector(".countries");
+const select = document.querySelector(".select");
+const optionDiv = document.querySelector(".regionName");
+const regionArea = document.querySelectorAll(".region-text");
+
+
+select.addEventListener("click", ()=> {
+    optionDiv.classList.toggle("show");
+})
 
 async function findCountries(){
     const response = await fetch("https://restcountries.com/v3.1/all");
@@ -22,11 +27,37 @@ function showCountry(info){
                     <img src="${info.flags.png}" alt="">
                 </div>
                 <div class="country-info">
-                    <h4>${info.name.common}</h4>
+                    <h4 class = "countryName">${info.name.common}</h4>
                     <p class="info-para">Population :<span class="info-text">${info.population}</span></p>
-                    <p class="info-para">Region :<span class="info-text">${info.region}</span></p>
+                    <p class="info-para ">Region :<span class="info-text nameRegion">${info.region}</span></p>
                     <p class="info-para">Capital :<span class="info-text"></span>${info.capital}</p>
                 </div>`
     countries.appendChild(country);
     
 }
+
+const nameRegion = document.getElementsByClassName("nameRegion");
+regionArea.forEach( (elem)=> {
+    elem.addEventListener("click", ()=> {
+        Array.from(nameRegion).forEach( (e)=> {
+            if(e.innerText.includes(elem.innerText)|| elem.innerText == "All"){
+                e.parentElement.parentElement.parentElement.style.display = "flex";
+             }else{
+                e.parentElement.parentElement.parentElement.style.display = "none";
+             }
+        })
+    })
+})
+
+const search = document.getElementById("search-input");
+const countryName  = document.getElementsByClassName("countryName")
+search.addEventListener("input", ()=> {
+    
+    Array.from(countryName).forEach( (e)=> {
+        if(e.innerText.toLowerCase().includes(search.value.toLowerCase())){
+            e.parentElement.parentElement.style.display = "flex";
+         }else{
+            e.parentElement.parentElement.style.display = "none";
+         }
+    })
+})
