@@ -6,7 +6,8 @@ const dark = document.querySelector(".dark-mode");
 const moon = document.querySelector(".moon");
 dark.addEventListener("click", ()=> {
     document.body.classList.toggle("dark");
-    moon.classList.toggle("fa-moon")
+    moon.classList.toggle("fa-moon");
+    moon.innerText.toggle("Light Mode");
 })
 
 select.addEventListener("click", ()=> {
